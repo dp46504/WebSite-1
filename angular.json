@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "websiteOne": {
+    "websiteone": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -62,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "websiteOne:build:production"
+              "buildTarget": "websiteone:build:production"
             },
             "development": {
-              "buildTarget": "websiteOne:build:development"
+              "buildTarget": "websiteone:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "websiteOne:build"
+            "buildTarget": "websiteone:build"
           }
         },
         "test": {
@@ -94,6 +94,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "websiteone:build:production",
+              "serveTarget": "websiteone:serve:production"
+            },
+            "development": {
+              "buildTarget": "websiteone:build:development",
+              "serveTarget": "websiteone:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

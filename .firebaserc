@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "website-no-1-7e70e": {
+      "hosting": {
+        "websiteone": [
+          "website-no-1-7e70e"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "website-no-1-7e70e"
+  }
+}
